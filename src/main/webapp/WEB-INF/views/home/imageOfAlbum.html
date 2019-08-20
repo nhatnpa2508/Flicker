@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" th:href="@{~/resources/home/img/favicon.png}" type="image/png">
+    <title>Bitmap Photography Multi</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{~/resources/home/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{~/resources/home/vendors/linericon/style.css}">
+    <link rel="stylesheet" th:href="@{~/resources/home/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{~/resources/home/vendors/owl-carousel/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{~/resources/home/vendors/lightbox/simpleLightbox.css}">
+    <link rel="stylesheet" th:href="@{~/resources/home/vendors/nice-select/css/nice-select.css}">
+    <link rel="stylesheet" th:href="@{~/resources/home/vendors/animate-css/animate.css}">
+    <!-- main css -->
+    <link rel="stylesheet" th:href="@{~/resources/home/css/style.css}">
+    <link rel="stylesheet" th:href="@{~/resources/home/css/responsive.css}">
+</head>
+<body>
+
+<!--================Header Menu Area =================-->
+<header class="header_area">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="/home"><img th:src="@{~/resources/home/img/logo.png}" alt="Image"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <ul class="nav navbar-nav menu_nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/home">HOME</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/images">PHOTOGRAPHY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/albums">ALBUM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about-us">CONTACT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/viewAlbums">PERSONAL PAGE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout"><img th:src="@{resources/home/img/iconlogout.png}" alt="Logout" width="30px"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--================Header Menu Area =================-->
+
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+        <div class="container">
+            <div class="banner_content text-center">
+                <a><h2 th:text="${album.name}"></h2></a>
+                <div class="page_link">
+                    <a>Author: </a><a th:text="${album.user.nickname}"></a><br>
+                    <a th:text="${album.content}"></a><br>
+                    <a>Category: </a><a th:text="${album.category.name}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Home Banner Area =================-->
+
+<!--================Home Gallery Area =================-->
+<section class="home_gallery_area p_120">
+    <div class="container">
+        <div class="isotope_fillter">
+            <ul class="gallery_filter list" hidden>
+                <li class="active" data-filter="*"><a href="#">All</a></li>
+                <li data-filter=".Human"><a>Human</a></li>
+                <li data-filter=".City"><a>City</a></li>
+                <li data-filter=".Nature"><a>Nature</a></li>
+                <li data-filter=".Animal"><a>Animal</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container box_1620">
+        <div class="gallery_f_inner row imageGallery1">
+            <th:block th:each="image: ${imageList}">
+                <div th:class="'col-lg-3 col-md-4 col-sm-6 '+${image.album.category.name}">
+                    <div class="h_gallery_item">
+                        <img th:src="@{'~/images/'+${image.photo}}" alt="Image">
+                        <div class="hover">
+                            <a href="#"><h4 th:text="${image.title}"></h4></a>
+                            <a><h6 th:text="${image.dateCreated.toLocaleString().substring(0,11)}" style="color: white"></h6></a>
+                            <a class="light" th:href="@{~/images/__${image.photo}__}"><i class="fa fa-expand"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</section>
+<!--================End Home Gallery Area =================-->
+
+<!--================Instagram Area =================-->
+<section class="instagram_area top_pad">
+    <div class="container box_1620">
+        <div class="insta_btn">
+            <a class="btn theme_btn" href="#">Follow us on instagram</a>
+        </div>
+        <div class="instagram_image row m0">
+            <a href="#"><img th:src="@{~/resources/home/img/instagram/ins-1.jpg}" alt="Image"></a>
+            <a href="#"><img th:src="@{~/resources/home/img/instagram/ins-2.jpg}" alt="Image"></a>
+            <a href="#"><img th:src="@{~/resources/home/img/instagram/ins-3.jpg}" alt="Image"></a>
+            <a href="#"><img th:src="@{~/resources/home/img/instagram/ins-4.jpg}" alt="Image"></a>
+            <a href="#"><img th:src="@{~/resources/home/img/instagram/ins-5.jpg}" alt="Image"></a>
+            <a href="#"><img th:src="@{~/resources/home/img/instagram/ins-6.jpg}" alt="Image"></a>
+        </div>
+    </div>
+</section>
+<!--================End Instagram Area =================-->
+
+<!--================Footer Area =================-->
+<footer class="footer_area p_120">
+    <div class="container">
+        <div class="row footer_inner">
+            <div class="col-lg-5 col-sm-6">
+                <aside class="f_widget ab_widget">
+                    <div class="f_title">
+                        <h3>About Me</h3>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore </p>
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </aside>
+            </div>
+            <div class="col-lg-5 col-sm-6">
+                <aside class="f_widget news_widget">
+                    <div class="f_title">
+                        <h3>Newsletter</h3>
+                    </div>
+                    <p>Stay updated with our latest trends</p>
+                    <div id="mc_embed_signup">
+                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                            <div class="input-group d-flex flex-row">
+                                <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
+                            </div>
+                            <div class="mt-10 info"></div>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-2">
+                <aside class="f_widget social_widget">
+                    <div class="f_title">
+                        <h3>Follow Me</h3>
+                    </div>
+                    <p>Let us be social</p>
+                    <ul class="list">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--================End Footer Area =================-->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{resources/home/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{resources/home/js/popper.js}"></script>
+<script th:src="@{resources/home/js/bootstrap.min.js}"></script>
+<script th:src="@{resources/home/js/stellar.js}"></script>
+<script th:src="@{resources/home/vendors/lightbox/simpleLightbox.min.js}"></script>
+<script th:src="@{resources/home/vendors/nice-select/js/jquery.nice-select.min.js}"></script>
+<script th:src="@{resources/home/vendors/isotope/imagesloaded.pkgd.min.js}"></script>
+<script th:src="@{resources/home/vendors/isotope/isotope-min.js}"></script>
+<script th:src="@{resources/home/vendors/owl-carousel/owl.carousel.min.js}"></script>
+<script th:src="@{resources/home/js/jquery.ajaxchimp.min.js}"></script>
+<script th:src="@{resources/home/js/mail-script.js}"></script>
+<script th:src="@{resources/home/js/theme.js}"></script>
+</body>
+</html>
