@@ -29,13 +29,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.File;
+import java.awt.image.*;
 import java.io.IOException;
 
 @Controller
 @SessionAttributes("user")
 public class ImageController {
 
-    private static String UPLOAD_LOCATION = "E:\\CodeGym\\Nhat\\NhatModule02\\CaseStudy\\FlickerApp\\src\\main\\webapp\\WEB-INF\\images\\";
+    private static String UPLOAD_LOCATION = "D:\\00Flicker\\Flicker\\src\\main\\webapp\\WEB-INF\\images\\";
 
     @Autowired
     private IImageService imageService;

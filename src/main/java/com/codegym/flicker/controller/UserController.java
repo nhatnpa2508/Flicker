@@ -34,7 +34,7 @@ import java.security.NoSuchAlgorithmException;
 @SessionAttributes("user")
 public class UserController {
 
-    private static String UPLOAD_LOCATION = "E:\\CodeGym\\Nhat\\NhatModule02\\CaseStudy\\FlickerApp\\src\\main\\webapp\\WEB-INF\\images\\";
+    private static String UPLOAD_LOCATION = "D:\\00Flicker\\Flicker\\src\\main\\webapp\\WEB-INF\\images\\";
 
     @Autowired
     private IUserService userService;

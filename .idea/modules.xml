@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FlickerApp.iml" filepath="$PROJECT_DIR$/.idea/modules/FlickerApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FlickerApp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/FlickerApp_main.iml" group="FlickerApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FlickerApp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/FlickerApp_test.iml" group="FlickerApp" />
+    </modules>
+  </component>
+</project>

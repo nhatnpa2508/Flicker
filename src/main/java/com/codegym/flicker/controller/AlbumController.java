@@ -33,6 +33,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.File;
+import java.awt.image.*;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -40,7 +41,7 @@ import java.util.Optional;
 @SessionAttributes("user")
 public class AlbumController {
 
-    private static String UPLOAD_LOCATION = "E:\\CodeGym\\Nhat\\NhatModule02\\CaseStudy\\FlickerApp\\src\\main\\webapp\\WEB-INF\\images\\";
+    private static String UPLOAD_LOCATION = "D:\\00Flicker\\Flicker\\src\\main\\webapp\\WEB-INF\\images\\";
 
     @Autowired
     private IUserService userService;

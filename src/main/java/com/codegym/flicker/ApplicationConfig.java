@@ -146,7 +146,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         dataSource.setUrl("jdbc:mysql://localhost:3306/flicker?useUnicode=true&characterEncoding=UTF-8"
          + "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
         dataSource.setUsername( "root" );
-        dataSource.setPassword( "12345" );
+        dataSource.setPassword( "thanhtin123" );
         return dataSource;
     }
 
